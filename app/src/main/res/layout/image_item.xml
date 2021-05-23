@@ -1,0 +1,27 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+
+        android:scaleType="center"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+
+
+        android:background="#AA000000"
+
+        android:gravity="center"
+        android:padding="12dip"
+        android:text="Golden Gate"
+        android:textColor="#ffffffff" />
+
+</FrameLayout>
