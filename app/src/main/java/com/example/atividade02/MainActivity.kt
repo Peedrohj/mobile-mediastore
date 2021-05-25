@@ -20,9 +20,14 @@ class MainActivity : AppCompatActivity(), FileAdapter.OnItemClickListener {
         setContentView(R.layout.activity_main)
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) ==
-            PackageManager.PERMISSION_GRANTED) {
+            PackageManager.PERMISSION_GRANTED
+        ) {
         } else {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 0)
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                0
+            )
         }
 
         file_list.adapter = adapter
@@ -55,16 +60,10 @@ class MainActivity : AppCompatActivity(), FileAdapter.OnItemClickListener {
                 val id = cursor.getLong(fileId)
                 val title = cursor.getString(fileName)
 
-                print("DEBUG Media ID: $id")
-                print("DEBUG Media Title: $title")
-
                 val contentUri =
                     ContentUris.withAppendedId(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, id)
-                print("DEBUG contentUri: $contentUri")
-
 
                 val file = FileData(name = title, imageUri = contentUri)
-
                 list.add(file)
             }
         }
@@ -74,5 +73,5 @@ class MainActivity : AppCompatActivity(), FileAdapter.OnItemClickListener {
     override fun onItemClick(position: Int) {
         TODO("Not yet implemented")
     }
-    
+
 }
